@@ -1491,7 +1491,6 @@ h1 span {
   font: 500 0.7rem 'DM Mono';
   color: var(--lime);
   letter-spacing: 0.08em;
-  transition: color 0.3s ease;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -1763,7 +1762,7 @@ h1 span {
 
 
 /* ============================================================
-   SECTION 08 — CONTACT
+   SECTION 08 — CONTACT (FORM ONLY)
    ============================================================ */
 
 .contact-section {
@@ -1803,65 +1802,9 @@ h1 span {
   line-height: 1.8;
 }
 
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 48px;
-  align-items: start;
-}
-
-.contact-info {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.contact-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-  padding: 16px 20px;
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 4px;
-  transition: all 0.35s ease;
-}
-
-.contact-item:hover {
-  border-color: var(--lime);
-  transform: translateX(4px);
-}
-
-.contact-item i {
-  font-size: 1.1rem;
-  color: var(--lime);
-  margin-top: 2px;
-  width: 20px;
-  text-align: center;
-}
-
-.contact-item div {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.contact-label {
-  font: 500 0.55rem 'DM Mono';
-  color: var(--muted);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.contact-item a,
-.contact-item span {
-  font-size: 0.9rem;
-  color: var(--text);
-  transition: color 0.3s ease;
-}
-
-.contact-item a:hover {
-  color: var(--lime);
+.contact-form-wrapper {
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .contact-form {
@@ -2248,11 +2191,6 @@ footer div span {
     padding: 80px 0;
   }
 
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
   .contact-section h2 {
     font-size: clamp(2rem, 4.5vw, 3rem);
   }
@@ -2264,10 +2202,6 @@ footer div span {
 
   .contact-section {
     padding: 80px 0;
-  }
-
-  .contact-item {
-    padding: 14px 16px;
   }
 
   .contact-form .btn-main {
@@ -2539,19 +2473,6 @@ footer div span {
     width: calc(100% - 28px);
   }
 
-  .contact-item {
-    padding: 12px 14px;
-  }
-
-  .contact-item i {
-    font-size: 0.9rem;
-  }
-
-  .contact-item a,
-  .contact-item span {
-    font-size: 0.8rem;
-  }
-
   .form-group input,
   .form-group textarea {
     padding: 12px 14px;
@@ -2561,5 +2482,7 @@ footer div span {
   .contact-form .btn-main {
     padding: 12px 24px;
     font-size: 0.7rem;
+    align-self: stretch;
+    justify-content: center;
   }
 }
