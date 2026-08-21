@@ -1623,6 +1623,145 @@ h1 span {
 }
 
 
+/* ============================================================
+   CERTIFICATIONS SECTION
+   ============================================================ */
+
+.certifications-section {
+  padding: 130px 0;
+  background: var(--bg);
+  border-top: 1px solid var(--line);
+}
+
+.certifications-section .section-inner {
+  width: min(var(--max), calc(100% - 48px));
+  margin: auto;
+}
+
+.certifications-section .section-tag {
+  font: 500 .68rem 'DM Mono';
+  letter-spacing: .2em;
+  color: var(--lime);
+  margin-bottom: 19px;
+  display: inline-block;
+  border-left: 3px solid var(--lime);
+  padding-left: 14px;
+}
+
+.certifications-section h2 {
+  font: 700 clamp(3rem, 6vw, 6rem)/.95 'Space Grotesk';
+  letter-spacing: -.07em;
+  max-width: 800px;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.certifications-subtext {
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin-bottom: 48px;
+  max-width: 600px;
+  line-height: 1.8;
+}
+
+/* 3‑column grid */
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* Certificate Card */
+.cert-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 32px 28px 28px;
+  transition: all 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.cert-card:hover {
+  border-color: var(--lime);
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px -12px rgba(216, 255, 63, 0.08);
+}
+
+.cert-icon {
+  font-size: 2.8rem;
+  margin-bottom: 16px;
+  line-height: 1;
+}
+
+.cert-card h3 {
+  font: 600 1.1rem 'Space Grotesk';
+  color: var(--text);
+  letter-spacing: -.02em;
+  margin-bottom: 4px;
+}
+
+.cert-issuer {
+  font: 500 0.75rem 'Inter';
+  color: var(--muted);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.cert-date {
+  font: 500 0.6rem 'DM Mono';
+  color: var(--lime);
+  letter-spacing: 0.06em;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.cert-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.cert-tags span {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--line);
+  padding: 2px 12px;
+  border-radius: 20px;
+  font-size: 0.6rem;
+  color: var(--muted);
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.cert-view {
+  font: 500 0.7rem 'DM Mono';
+  color: var(--lime);
+  letter-spacing: 0.08em;
+  transition: color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border: 1px solid rgba(216, 255, 63, 0.2);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.cert-view i {
+  font-size: 0.65rem;
+}
+
+.cert-view:hover {
+  color: #efff9b;
+  border-color: var(--lime);
+  background: rgba(216, 255, 63, 0.06);
+}
+
+
 /* FOOTER */
 
 footer {
@@ -1730,6 +1869,14 @@ footer div span {
 
   .education-grid {
     gap: 18px;
+  }
+
+  .certifications-grid {
+    gap: 18px;
+  }
+
+  .cert-card {
+    padding: 26px 20px 24px;
   }
 }
 
@@ -1894,6 +2041,37 @@ footer div span {
   }
 
   .education-section {
+    padding: 80px 0;
+  }
+
+  /* certifications: 2 columns on tablet */
+  .certifications-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .cert-card {
+    padding: 22px 18px 20px;
+  }
+
+  .cert-icon {
+    font-size: 2.2rem;
+  }
+
+  .cert-card h3 {
+    font-size: 0.95rem;
+  }
+
+  .certifications-section h2 {
+    font-size: clamp(2rem, 4.5vw, 3rem);
+  }
+
+  .certifications-subtext {
+    font-size: 0.95rem;
+    margin-bottom: 32px;
+  }
+
+  .certifications-section {
     padding: 80px 0;
   }
 }
@@ -2098,5 +2276,50 @@ footer div span {
 
   .education-section {
     padding: 60px 0 70px;
+  }
+
+  /* certifications: single column on mobile */
+  .certifications-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .cert-card {
+    padding: 20px 16px 18px;
+  }
+
+  .cert-icon {
+    font-size: 2rem;
+  }
+
+  .cert-card h3 {
+    font-size: 0.9rem;
+  }
+
+  .cert-tags span {
+    font-size: 0.5rem;
+    padding: 2px 8px;
+  }
+
+  .cert-view {
+    font-size: 0.6rem;
+    padding: 6px 14px;
+  }
+
+  .certifications-section h2 {
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+  }
+
+  .certifications-section {
+    padding: 60px 0 70px;
+  }
+
+  .certifications-subtext {
+    font-size: 0.8rem;
+    margin-bottom: 24px;
+  }
+
+  .certifications-section .section-inner {
+    width: calc(100% - 28px);
   }
 }
