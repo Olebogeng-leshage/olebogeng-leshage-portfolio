@@ -17,249 +17,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <link rel="stylesheet" href="style.css">
-
-  <!-- ==========================================================
-       ADDITIONAL CSS FOR SKILLS SECTION (4‑COLUMN GRID WITH LOGOS)
-       ========================================================== -->
-  <style>
-    /* Skills Section – 4 columns, logos, matching your dark theme */
-    .skills-section {
-      padding: 80px 0 100px;
-      background: #0b0b0b;
-      border-top: 1px solid rgba(255, 255, 255, 0.04);
-    }
-
-    .skills-section .section-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    .skills-section .section-tag {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 2px;
-      color: #00f0ff;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-      display: inline-block;
-      border-left: 3px solid #00f0ff;
-      padding-left: 14px;
-    }
-
-    .skills-section h2 {
-      font-size: 2.4rem;
-      font-weight: 700;
-      color: #ffffff;
-      margin-bottom: 8px;
-      letter-spacing: -0.5px;
-    }
-
-    .skills-subtext {
-      color: rgba(255, 255, 255, 0.5);
-      font-size: 1.05rem;
-      margin-bottom: 48px;
-      max-width: 520px;
-    }
-
-    /* Grid — exactly 4 columns */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-    }
-
-    /* Skill Card */
-    .skill-card {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 32px 16px 28px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.07);
-      border-radius: 20px;
-      text-align: center;
-      transition: all 0.35s ease;
-      min-height: 200px;
-    }
-
-    .skill-card:hover {
-      transform: translateY(-8px);
-      border-color: rgba(0, 240, 255, 0.3);
-      background: rgba(255, 255, 255, 0.06);
-      box-shadow: 0 16px 48px -12px rgba(0, 240, 255, 0.1);
-    }
-
-    .skill-name {
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: #ffffff;
-      margin: 0 0 16px 0;
-      letter-spacing: 0.2px;
-    }
-
-    .logo-wrapper {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 56px;
-      width: 56px;
-      margin-bottom: 16px;
-    }
-
-    .logo-wrapper img {
-      height: 100%;
-      width: auto;
-      max-width: 56px;
-      object-fit: contain;
-      filter: brightness(1) saturate(1);
-      transition: filter 0.3s ease, transform 0.3s ease;
-      display: block;
-    }
-
-    .skill-card:hover .logo-wrapper img {
-      filter: brightness(1.2) saturate(1.1);
-      transform: scale(1.08);
-    }
-
-    /* GitHub dark logo fix */
-    .logo-wrapper img.dark-logo {
-      filter: brightness(0) invert(1) brightness(0.95);
-    }
-
-    .skill-card:hover .logo-wrapper img.dark-logo {
-      filter: brightness(0) invert(1) brightness(1.15);
-    }
-
-    /* SQL icon (Font Awesome) */
-    .sql-icon {
-      font-size: 3.2rem;
-      color: #00f0ff;
-      transition: all 0.3s ease;
-      text-shadow: 0 0 24px rgba(0, 240, 255, 0.15);
-    }
-
-    .skill-card:hover .sql-icon {
-      transform: scale(1.08);
-      text-shadow: 0 0 40px rgba(0, 240, 255, 0.3);
-    }
-
-    .skill-desc {
-      font-size: 0.72rem;
-      font-weight: 500;
-      color: rgba(255, 255, 255, 0.45);
-      margin: 0;
-      letter-spacing: 0.6px;
-      text-transform: uppercase;
-    }
-
-    /* Responsive */
-    @media (max-width: 1024px) {
-      .skills-grid {
-        gap: 18px;
-      }
-      .skill-card {
-        padding: 24px 12px 20px;
-        min-height: 170px;
-      }
-      .skill-name {
-        font-size: 0.95rem;
-        margin-bottom: 12px;
-      }
-      .logo-wrapper {
-        height: 48px;
-        width: 48px;
-        margin-bottom: 12px;
-      }
-      .logo-wrapper img {
-        max-width: 48px;
-      }
-      .sql-icon {
-        font-size: 2.6rem;
-      }
-      .skill-desc {
-        font-size: 0.65rem;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 14px;
-      }
-      .skill-card {
-        padding: 20px 10px 18px;
-        min-height: 150px;
-        border-radius: 16px;
-      }
-      .skill-name {
-        font-size: 0.85rem;
-        margin-bottom: 10px;
-      }
-      .logo-wrapper {
-        height: 42px;
-        width: 42px;
-        margin-bottom: 10px;
-      }
-      .logo-wrapper img {
-        max-width: 42px;
-      }
-      .sql-icon {
-        font-size: 2.2rem;
-      }
-      .skill-desc {
-        font-size: 0.6rem;
-      }
-      .skills-section h2 {
-        font-size: 1.8rem;
-      }
-      .skills-subtext {
-        font-size: 0.95rem;
-        margin-bottom: 32px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .skills-grid {
-        gap: 10px;
-      }
-      .skill-card {
-        padding: 14px 6px 12px;
-        min-height: 120px;
-        border-radius: 12px;
-      }
-      .skill-name {
-        font-size: 0.7rem;
-        margin-bottom: 8px;
-      }
-      .logo-wrapper {
-        height: 34px;
-        width: 34px;
-        margin-bottom: 8px;
-      }
-      .logo-wrapper img {
-        max-width: 34px;
-      }
-      .sql-icon {
-        font-size: 1.8rem;
-      }
-      .skill-desc {
-        font-size: 0.5rem;
-        letter-spacing: 0.4px;
-      }
-      .skills-section h2 {
-        font-size: 1.3rem;
-      }
-      .skills-section {
-        padding: 60px 0 70px;
-      }
-      .skills-subtext {
-        font-size: 0.8rem;
-        margin-bottom: 24px;
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -682,7 +439,7 @@
 
 
     <!-- ========================================================== -->
-    <!-- ===============  SKILLS SECTION (NEW) =================== -->
+    <!-- ===============  SKILLS SECTION (FIXED LOGOS) ============ -->
     <!-- ========================================================== -->
     <section class="skills-section" id="skills">
 
@@ -705,7 +462,7 @@
           <div class="skill-card">
             <p class="skill-name">Microsoft Excel</p>
             <div class="logo-wrapper">
-              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/microsoftexcel.svg" alt="Microsoft Excel">
+              <img src="https://cdn.simpleicons.org/microsoftexcel" alt="Microsoft Excel">
             </div>
             <p class="skill-desc">Data Analysis</p>
           </div>
@@ -714,7 +471,7 @@
           <div class="skill-card">
             <p class="skill-name">Power BI</p>
             <div class="logo-wrapper">
-              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/powerbi.svg" alt="Power BI">
+              <img src="https://cdn.simpleicons.org/powerbi" alt="Power BI">
             </div>
             <p class="skill-desc">Business Intelligence</p>
           </div>
@@ -723,7 +480,7 @@
           <div class="skill-card">
             <p class="skill-name">Python</p>
             <div class="logo-wrapper">
-              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/python.svg" alt="Python">
+              <img src="https://cdn.simpleicons.org/python" alt="Python">
             </div>
             <p class="skill-desc">Data Science</p>
           </div>
@@ -741,7 +498,7 @@
           <div class="skill-card">
             <p class="skill-name">Flutter</p>
             <div class="logo-wrapper">
-              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/flutter.svg" alt="Flutter">
+              <img src="https://cdn.simpleicons.org/flutter" alt="Flutter">
             </div>
             <p class="skill-desc">App Development</p>
           </div>
@@ -750,7 +507,7 @@
           <div class="skill-card">
             <p class="skill-name">GitHub</p>
             <div class="logo-wrapper">
-              <img class="dark-logo" src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/github.svg" alt="GitHub">
+              <img class="dark-logo" src="https://cdn.simpleicons.org/github" alt="GitHub">
             </div>
             <p class="skill-desc">Version Control</p>
           </div>
@@ -759,7 +516,7 @@
           <div class="skill-card">
             <p class="skill-name">Databricks</p>
             <div class="logo-wrapper">
-              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/databricks.svg" alt="Databricks">
+              <img src="https://cdn.simpleicons.org/databricks" alt="Databricks">
             </div>
             <p class="skill-desc">Data Engineering</p>
           </div>
@@ -768,7 +525,7 @@
           <div class="skill-card">
             <p class="skill-name">Visual Studio</p>
             <div class="logo-wrapper">
-              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/visualstudio.svg" alt="Visual Studio">
+              <img src="https://cdn.simpleicons.org/visualstudio" alt="Visual Studio">
             </div>
             <p class="skill-desc">Software Development</p>
           </div>
@@ -798,6 +555,23 @@
 
 
   <script src="script.js"></script>
+
+  <!-- Mobile Menu Toggle Script -->
+  <script>
+    const menu = document.getElementById('menu');
+    const navLinks = document.getElementById('navLinks');
+
+    menu.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    // Close menu when a link is clicked
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+      });
+    });
+  </script>
 
 </body>
 </html>
