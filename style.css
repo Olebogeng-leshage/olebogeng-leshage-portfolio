@@ -1141,7 +1141,7 @@ h1 span {
 
 
 /* ============================================================
-   SKILLS SECTION — 4-COLUMN GRID WITH LOGOS
+   SKILLS SECTION — 4-COLUMN GRID
    ============================================================ */
 
 .skills-section {
@@ -1181,14 +1181,12 @@ h1 span {
   line-height: 1.8;
 }
 
-/* ===== GRID — EXACTLY 4 COLUMNS ===== */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
 }
 
-/* ===== SKILL CARD ===== */
 .skill-card {
   display: flex;
   flex-direction: column;
@@ -1273,7 +1271,7 @@ h1 span {
 }
 
 /* ============================================================
-   PROJECTS SECTION — 3-COLUMN GRID
+   PROJECTS SECTION — 3-COLUMN GRID with clickable cards
    ============================================================ */
 
 .projects-section {
@@ -1313,12 +1311,14 @@ h1 span {
   line-height: 1.8;
 }
 
+/* 3‑column grid */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 
+/* Whole card is a clickable link */
 .project-card {
   display: flex;
   flex-direction: column;
@@ -1330,6 +1330,7 @@ h1 span {
   color: inherit;
   transition: all 0.35s ease;
   min-height: 320px;
+  cursor: pointer;
 }
 
 .project-card:hover {
@@ -1377,16 +1378,19 @@ h1 span {
   text-transform: uppercase;
 }
 
+/* Visible link indicator */
 .project-link {
   font: 500 0.7rem 'DM Mono';
   color: var(--lime);
   letter-spacing: 0.08em;
   transition: color 0.3s ease;
+  align-self: flex-start;
 }
 
 .project-card:hover .project-link {
   color: #efff9b;
 }
+
 
 /* FOOTER */
 
@@ -1585,8 +1589,9 @@ footer div span {
     padding: 80px 0;
   }
 
+  /* projects: switch to 2 columns */
   .projects-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 16px;
   }
 
@@ -1739,6 +1744,7 @@ footer div span {
     width: calc(100% - 28px);
   }
 
+  /* projects: single column */
   .projects-grid {
     grid-template-columns: 1fr;
     gap: 14px;
