@@ -1008,7 +1008,9 @@ h1 span {
 }
 
 
-/* IDENTITY */
+/* ============================================================
+   SECTION 02 — ABOUT (PROFESSIONAL IDENTITY)
+   ============================================================ */
 
 .identity {
 
@@ -1141,7 +1143,377 @@ h1 span {
 
 
 /* ============================================================
-   SKILLS SECTION
+   SECTION 03 — EXPERIENCE
+   ============================================================ */
+
+.experience-section {
+  padding: 130px 0;
+  background: var(--bg);
+  border-top: 1px solid var(--line);
+}
+
+.experience-section .section-inner {
+  width: min(var(--max), calc(100% - 48px));
+  margin: auto;
+}
+
+.experience-section .section-tag {
+  font: 500 .68rem 'DM Mono';
+  letter-spacing: .2em;
+  color: var(--lime);
+  margin-bottom: 19px;
+  display: inline-block;
+  border-left: 3px solid var(--lime);
+  padding-left: 14px;
+}
+
+.experience-section h2 {
+  font: 700 clamp(3rem, 6vw, 6rem)/.95 'Space Grotesk';
+  letter-spacing: -.07em;
+  max-width: 800px;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.experience-subtext {
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin-bottom: 48px;
+  max-width: 600px;
+  line-height: 1.8;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.experience-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 28px 24px;
+  transition: all 0.35s ease;
+}
+
+.experience-card:hover {
+  border-color: var(--lime);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px -12px rgba(216, 255, 63, 0.06);
+}
+
+.exp-header {
+  margin-bottom: 16px;
+}
+
+.exp-date {
+  font: 500 0.6rem 'DM Mono';
+  color: var(--lime);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.exp-header h3 {
+  font: 600 1.1rem 'Space Grotesk';
+  color: var(--text);
+  letter-spacing: -.02em;
+}
+
+.exp-company {
+  font: 500 0.85rem 'Inter';
+  color: var(--muted);
+  display: block;
+  margin-top: 2px;
+}
+
+.exp-duties {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.exp-duties li {
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  padding: 4px 0 4px 18px;
+  position: relative;
+}
+
+.exp-duties li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--lime);
+  font-size: 0.7rem;
+}
+
+
+/* ============================================================
+   SECTION 04 — EDUCATION
+   ============================================================ */
+
+.education-section {
+  padding: 130px 0;
+  background: var(--bg);
+  border-top: 1px solid var(--line);
+}
+
+.education-section .section-inner {
+  width: min(var(--max), calc(100% - 48px));
+  margin: auto;
+}
+
+.education-section .section-tag {
+  font: 500 .68rem 'DM Mono';
+  letter-spacing: .2em;
+  color: var(--lime);
+  margin-bottom: 19px;
+  display: inline-block;
+  border-left: 3px solid var(--lime);
+  padding-left: 14px;
+}
+
+.education-section h2 {
+  font: 700 clamp(3rem, 6vw, 6rem)/.95 'Space Grotesk';
+  letter-spacing: -.07em;
+  max-width: 800px;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.education-subtext {
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin-bottom: 48px;
+  max-width: 600px;
+  line-height: 1.8;
+}
+
+.education-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.education-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 28px 24px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  transition: all 0.35s ease;
+}
+
+.education-card:hover {
+  border-color: var(--lime);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px -12px rgba(216, 255, 63, 0.06);
+}
+
+.edu-icon {
+  font-size: 2rem;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.edu-content {
+  flex: 1;
+}
+
+.edu-content h3 {
+  font: 600 1.1rem 'Space Grotesk';
+  color: var(--text);
+  letter-spacing: -.02em;
+  margin-bottom: 2px;
+}
+
+.edu-institution {
+  font: 500 0.85rem 'Inter';
+  color: var(--muted);
+  display: block;
+}
+
+.edu-date {
+  font: 500 0.6rem 'DM Mono';
+  color: var(--lime);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: block;
+  margin-top: 4px;
+}
+
+.edu-desc {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+.edu-majors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.edu-majors span {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--line);
+  padding: 2px 12px;
+  border-radius: 20px;
+  font-size: 0.6rem;
+  color: var(--muted);
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+
+/* ============================================================
+   SECTION 05 — CERTIFICATIONS
+   ============================================================ */
+
+.certifications-section {
+  padding: 130px 0;
+  background: var(--bg);
+  border-top: 1px solid var(--line);
+}
+
+.certifications-section .section-inner {
+  width: min(var(--max), calc(100% - 48px));
+  margin: auto;
+}
+
+.certifications-section .section-tag {
+  font: 500 .68rem 'DM Mono';
+  letter-spacing: .2em;
+  color: var(--lime);
+  margin-bottom: 19px;
+  display: inline-block;
+  border-left: 3px solid var(--lime);
+  padding-left: 14px;
+}
+
+.certifications-section h2 {
+  font: 700 clamp(3rem, 6vw, 6rem)/.95 'Space Grotesk';
+  letter-spacing: -.07em;
+  max-width: 800px;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.certifications-subtext {
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin-bottom: 48px;
+  max-width: 600px;
+  line-height: 1.8;
+}
+
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.cert-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 32px 28px 28px;
+  transition: all 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.cert-card:hover {
+  border-color: var(--lime);
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px -12px rgba(216, 255, 63, 0.08);
+}
+
+.cert-icon {
+  font-size: 2.8rem;
+  margin-bottom: 16px;
+  line-height: 1;
+}
+
+.cert-card h3 {
+  font: 600 1.1rem 'Space Grotesk';
+  color: var(--text);
+  letter-spacing: -.02em;
+  margin-bottom: 4px;
+}
+
+.cert-issuer {
+  font: 500 0.75rem 'Inter';
+  color: var(--muted);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.cert-date {
+  font: 500 0.6rem 'DM Mono';
+  color: var(--lime);
+  letter-spacing: 0.06em;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.cert-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.cert-tags span {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--line);
+  padding: 2px 12px;
+  border-radius: 20px;
+  font-size: 0.6rem;
+  color: var(--muted);
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.cert-view {
+  font: 500 0.7rem 'DM Mono';
+  color: var(--lime);
+  letter-spacing: 0.08em;
+  transition: color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border: 1px solid rgba(216, 255, 63, 0.2);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.cert-view i {
+  font-size: 0.65rem;
+}
+
+.cert-view:hover {
+  color: #efff9b;
+  border-color: var(--lime);
+  background: rgba(216, 255, 63, 0.06);
+}
+
+
+/* ============================================================
+   SECTION 06 — SKILLS
    ============================================================ */
 
 .skills-section {
@@ -1272,7 +1644,7 @@ h1 span {
 
 
 /* ============================================================
-   PROJECTS SECTION
+   SECTION 07 — PROJECTS
    ============================================================ */
 
 .projects-section {
@@ -1391,21 +1763,21 @@ h1 span {
 
 
 /* ============================================================
-   EXPERIENCE SECTION
+   SECTION 08 — CONTACT
    ============================================================ */
 
-.experience-section {
+.contact-section {
   padding: 130px 0;
   background: var(--bg);
   border-top: 1px solid var(--line);
 }
 
-.experience-section .section-inner {
+.contact-section .section-inner {
   width: min(var(--max), calc(100% - 48px));
   margin: auto;
 }
 
-.experience-section .section-tag {
+.contact-section .section-tag {
   font: 500 .68rem 'DM Mono';
   letter-spacing: .2em;
   color: var(--lime);
@@ -1415,7 +1787,7 @@ h1 span {
   padding-left: 14px;
 }
 
-.experience-section h2 {
+.contact-section h2 {
   font: 700 clamp(3rem, 6vw, 6rem)/.95 'Space Grotesk';
   letter-spacing: -.07em;
   max-width: 800px;
@@ -1423,7 +1795,7 @@ h1 span {
   margin-bottom: 8px;
 }
 
-.experience-subtext {
+.contact-subtext {
   color: var(--muted);
   font-size: 1.05rem;
   margin-bottom: 48px;
@@ -1431,338 +1803,140 @@ h1 span {
   line-height: 1.8;
 }
 
-.experience-grid {
+.contact-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 48px;
+  align-items: start;
 }
 
-.experience-card {
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 4px;
-  padding: 28px 24px;
-  transition: all 0.35s ease;
-}
-
-.experience-card:hover {
-  border-color: var(--lime);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px -12px rgba(216, 255, 63, 0.06);
-}
-
-.exp-header {
-  margin-bottom: 16px;
-}
-
-.exp-date {
-  font: 500 0.6rem 'DM Mono';
-  color: var(--lime);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  display: block;
-  margin-bottom: 6px;
-}
-
-.exp-header h3 {
-  font: 600 1.1rem 'Space Grotesk';
-  color: var(--text);
-  letter-spacing: -.02em;
-}
-
-.exp-company {
-  font: 500 0.85rem 'Inter';
-  color: var(--muted);
-  display: block;
-  margin-top: 2px;
-}
-
-.exp-duties {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.exp-duties li {
-  color: var(--muted);
-  font-size: 0.85rem;
-  line-height: 1.6;
-  padding: 4px 0 4px 18px;
-  position: relative;
-}
-
-.exp-duties li::before {
-  content: "▸";
-  position: absolute;
-  left: 0;
-  color: var(--lime);
-  font-size: 0.7rem;
-}
-
-
-/* ============================================================
-   EDUCATION SECTION
-   ============================================================ */
-
-.education-section {
-  padding: 130px 0;
-  background: var(--bg);
-  border-top: 1px solid var(--line);
-}
-
-.education-section .section-inner {
-  width: min(var(--max), calc(100% - 48px));
-  margin: auto;
-}
-
-.education-section .section-tag {
-  font: 500 .68rem 'DM Mono';
-  letter-spacing: .2em;
-  color: var(--lime);
-  margin-bottom: 19px;
-  display: inline-block;
-  border-left: 3px solid var(--lime);
-  padding-left: 14px;
-}
-
-.education-section h2 {
-  font: 700 clamp(3rem, 6vw, 6rem)/.95 'Space Grotesk';
-  letter-spacing: -.07em;
-  max-width: 800px;
-  color: var(--text);
-  margin-bottom: 8px;
-}
-
-.education-subtext {
-  color: var(--muted);
-  font-size: 1.05rem;
-  margin-bottom: 48px;
-  max-width: 600px;
-  line-height: 1.8;
-}
-
-.education-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-}
-
-.education-card {
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 4px;
-  padding: 28px 24px;
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
-  transition: all 0.35s ease;
-}
-
-.education-card:hover {
-  border-color: var(--lime);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px -12px rgba(216, 255, 63, 0.06);
-}
-
-.edu-icon {
-  font-size: 2rem;
-  line-height: 1;
-  flex-shrink: 0;
-  margin-top: 4px;
-}
-
-.edu-content {
-  flex: 1;
-}
-
-.edu-content h3 {
-  font: 600 1.1rem 'Space Grotesk';
-  color: var(--text);
-  letter-spacing: -.02em;
-  margin-bottom: 2px;
-}
-
-.edu-institution {
-  font: 500 0.85rem 'Inter';
-  color: var(--muted);
-  display: block;
-}
-
-.edu-date {
-  font: 500 0.6rem 'DM Mono';
-  color: var(--lime);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  display: block;
-  margin-top: 4px;
-}
-
-.edu-desc {
-  color: var(--muted);
-  font-size: 0.85rem;
-  margin-top: 8px;
-  line-height: 1.5;
-}
-
-.edu-majors {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 10px;
-}
-
-.edu-majors span {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid var(--line);
-  padding: 2px 12px;
-  border-radius: 20px;
-  font-size: 0.6rem;
-  color: var(--muted);
-  letter-spacing: 0.3px;
-  text-transform: uppercase;
-}
-
-
-/* ============================================================
-   CERTIFICATIONS SECTION
-   ============================================================ */
-
-.certifications-section {
-  padding: 130px 0;
-  background: var(--bg);
-  border-top: 1px solid var(--line);
-}
-
-.certifications-section .section-inner {
-  width: min(var(--max), calc(100% - 48px));
-  margin: auto;
-}
-
-.certifications-section .section-tag {
-  font: 500 .68rem 'DM Mono';
-  letter-spacing: .2em;
-  color: var(--lime);
-  margin-bottom: 19px;
-  display: inline-block;
-  border-left: 3px solid var(--lime);
-  padding-left: 14px;
-}
-
-.certifications-section h2 {
-  font: 700 clamp(3rem, 6vw, 6rem)/.95 'Space Grotesk';
-  letter-spacing: -.07em;
-  max-width: 800px;
-  color: var(--text);
-  margin-bottom: 8px;
-}
-
-.certifications-subtext {
-  color: var(--muted);
-  font-size: 1.05rem;
-  margin-bottom: 48px;
-  max-width: 600px;
-  line-height: 1.8;
-}
-
-/* 3‑column grid */
-.certifications-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-/* Certificate Card */
-.cert-card {
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 4px;
-  padding: 32px 28px 28px;
-  transition: all 0.35s ease;
+.contact-info {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 20px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px 20px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  transition: all 0.35s ease;
+}
+
+.contact-item:hover {
+  border-color: var(--lime);
+  transform: translateX(4px);
+}
+
+.contact-item i {
+  font-size: 1.1rem;
+  color: var(--lime);
+  margin-top: 2px;
+  width: 20px;
   text-align: center;
 }
 
-.cert-card:hover {
-  border-color: var(--lime);
-  transform: translateY(-8px);
-  box-shadow: 0 16px 48px -12px rgba(216, 255, 63, 0.08);
-}
-
-.cert-icon {
-  font-size: 2.8rem;
-  margin-bottom: 16px;
-  line-height: 1;
-}
-
-.cert-card h3 {
-  font: 600 1.1rem 'Space Grotesk';
-  color: var(--text);
-  letter-spacing: -.02em;
-  margin-bottom: 4px;
-}
-
-.cert-issuer {
-  font: 500 0.75rem 'Inter';
-  color: var(--muted);
-  display: block;
-  margin-bottom: 2px;
-}
-
-.cert-date {
-  font: 500 0.6rem 'DM Mono';
-  color: var(--lime);
-  letter-spacing: 0.06em;
-  display: block;
-  margin-bottom: 14px;
-}
-
-.cert-tags {
+.contact-item div {
   display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  justify-content: center;
-  margin-bottom: 18px;
+  flex-direction: column;
+  gap: 2px;
 }
 
-.cert-tags span {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid var(--line);
-  padding: 2px 12px;
-  border-radius: 20px;
-  font-size: 0.6rem;
+.contact-label {
+  font: 500 0.55rem 'DM Mono';
   color: var(--muted);
-  letter-spacing: 0.3px;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-.cert-view {
-  font: 500 0.7rem 'DM Mono';
-  color: var(--lime);
-  letter-spacing: 0.08em;
+.contact-item a,
+.contact-item span {
+  font-size: 0.9rem;
+  color: var(--text);
   transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+  color: var(--lime);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font: 500 0.65rem 'DM Mono';
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 14px 18px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  transition: all 0.35s ease;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--lime);
+  box-shadow: 0 0 0 3px rgba(216, 255, 63, 0.06);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form .btn-main {
+  align-self: flex-start;
+  background: var(--lime);
+  color: #0a0b0d;
+  border: none;
+  cursor: pointer;
+  padding: 14px 32px;
+  min-height: 51px;
+  border-radius: 4px;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px 18px;
-  border: 1px solid rgba(216, 255, 63, 0.2);
-  border-radius: 4px;
-  transition: all 0.3s ease;
+  gap: 16px;
+  font-size: .76rem;
+  font-weight: 700;
+  transition: .25s;
 }
 
-.cert-view i {
-  font-size: 0.65rem;
+.contact-form .btn-main:hover {
+  background: #efff9b;
+  transform: translateY(-2px);
 }
 
-.cert-view:hover {
-  color: #efff9b;
-  border-color: var(--lime);
-  background: rgba(216, 255, 63, 0.06);
+.contact-form .btn-main span {
+  font-size: 1rem;
 }
 
 
-/* FOOTER */
+/* ============================================================
+   FOOTER
+   ============================================================ */
 
 footer {
 
@@ -2044,7 +2218,6 @@ footer div span {
     padding: 80px 0;
   }
 
-  /* certifications: 2 columns on tablet */
   .certifications-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
@@ -2073,6 +2246,33 @@ footer div span {
 
   .certifications-section {
     padding: 80px 0;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .contact-section h2 {
+    font-size: clamp(2rem, 4.5vw, 3rem);
+  }
+
+  .contact-subtext {
+    font-size: 0.95rem;
+    margin-bottom: 32px;
+  }
+
+  .contact-section {
+    padding: 80px 0;
+  }
+
+  .contact-item {
+    padding: 14px 16px;
+  }
+
+  .contact-form .btn-main {
+    align-self: stretch;
+    justify-content: center;
   }
 }
 
@@ -2278,7 +2478,6 @@ footer div span {
     padding: 60px 0 70px;
   }
 
-  /* certifications: single column on mobile */
   .certifications-grid {
     grid-template-columns: 1fr;
     gap: 14px;
@@ -2321,5 +2520,46 @@ footer div span {
 
   .certifications-section .section-inner {
     width: calc(100% - 28px);
+  }
+
+  .contact-section h2 {
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+  }
+
+  .contact-section {
+    padding: 60px 0 70px;
+  }
+
+  .contact-subtext {
+    font-size: 0.8rem;
+    margin-bottom: 24px;
+  }
+
+  .contact-section .section-inner {
+    width: calc(100% - 28px);
+  }
+
+  .contact-item {
+    padding: 12px 14px;
+  }
+
+  .contact-item i {
+    font-size: 0.9rem;
+  }
+
+  .contact-item a,
+  .contact-item span {
+    font-size: 0.8rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 12px 14px;
+    font-size: 0.85rem;
+  }
+
+  .contact-form .btn-main {
+    padding: 12px 24px;
+    font-size: 0.7rem;
   }
 }
