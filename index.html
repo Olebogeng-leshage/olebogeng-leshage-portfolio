@@ -1,9 +1,6 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
   <meta charset="UTF-8">
 
   <meta name="viewport"
@@ -12,41 +9,272 @@
   <meta name="description"
         content="Olebogeng Botlhale Leshage — aspiring Data Scientist, Financial Analyst, Business Analyst and Statistician.">
 
-  <meta name="author"
-        content="Olebogeng Botlhale Leshage">
-
   <title>
     Olebogeng Botlhale Leshage | Data • Business • Technology
   </title>
 
+  <!-- Font Awesome for SQL icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <link rel="stylesheet" href="style.css">
 
-</head>
+  <!-- ==========================================================
+       ADDITIONAL CSS FOR SKILLS SECTION (4‑COLUMN GRID WITH LOGOS)
+       ========================================================== -->
+  <style>
+    /* Skills Section – 4 columns, logos, matching your dark theme */
+    .skills-section {
+      padding: 80px 0 100px;
+      background: #0b0b0b;
+      border-top: 1px solid rgba(255, 255, 255, 0.04);
+    }
 
+    .skills-section .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .skills-section .section-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: #00f0ff;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: inline-block;
+      border-left: 3px solid #00f0ff;
+      padding-left: 14px;
+    }
+
+    .skills-section h2 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+    }
+
+    .skills-subtext {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 1.05rem;
+      margin-bottom: 48px;
+      max-width: 520px;
+    }
+
+    /* Grid — exactly 4 columns */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    /* Skill Card */
+    .skill-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 16px 28px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 20px;
+      text-align: center;
+      transition: all 0.35s ease;
+      min-height: 200px;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(0, 240, 255, 0.3);
+      background: rgba(255, 255, 255, 0.06);
+      box-shadow: 0 16px 48px -12px rgba(0, 240, 255, 0.1);
+    }
+
+    .skill-name {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin: 0 0 16px 0;
+      letter-spacing: 0.2px;
+    }
+
+    .logo-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 56px;
+      width: 56px;
+      margin-bottom: 16px;
+    }
+
+    .logo-wrapper img {
+      height: 100%;
+      width: auto;
+      max-width: 56px;
+      object-fit: contain;
+      filter: brightness(1) saturate(1);
+      transition: filter 0.3s ease, transform 0.3s ease;
+      display: block;
+    }
+
+    .skill-card:hover .logo-wrapper img {
+      filter: brightness(1.2) saturate(1.1);
+      transform: scale(1.08);
+    }
+
+    /* GitHub dark logo fix */
+    .logo-wrapper img.dark-logo {
+      filter: brightness(0) invert(1) brightness(0.95);
+    }
+
+    .skill-card:hover .logo-wrapper img.dark-logo {
+      filter: brightness(0) invert(1) brightness(1.15);
+    }
+
+    /* SQL icon (Font Awesome) */
+    .sql-icon {
+      font-size: 3.2rem;
+      color: #00f0ff;
+      transition: all 0.3s ease;
+      text-shadow: 0 0 24px rgba(0, 240, 255, 0.15);
+    }
+
+    .skill-card:hover .sql-icon {
+      transform: scale(1.08);
+      text-shadow: 0 0 40px rgba(0, 240, 255, 0.3);
+    }
+
+    .skill-desc {
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.45);
+      margin: 0;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .skills-grid {
+        gap: 18px;
+      }
+      .skill-card {
+        padding: 24px 12px 20px;
+        min-height: 170px;
+      }
+      .skill-name {
+        font-size: 0.95rem;
+        margin-bottom: 12px;
+      }
+      .logo-wrapper {
+        height: 48px;
+        width: 48px;
+        margin-bottom: 12px;
+      }
+      .logo-wrapper img {
+        max-width: 48px;
+      }
+      .sql-icon {
+        font-size: 2.6rem;
+      }
+      .skill-desc {
+        font-size: 0.65rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+      }
+      .skill-card {
+        padding: 20px 10px 18px;
+        min-height: 150px;
+        border-radius: 16px;
+      }
+      .skill-name {
+        font-size: 0.85rem;
+        margin-bottom: 10px;
+      }
+      .logo-wrapper {
+        height: 42px;
+        width: 42px;
+        margin-bottom: 10px;
+      }
+      .logo-wrapper img {
+        max-width: 42px;
+      }
+      .sql-icon {
+        font-size: 2.2rem;
+      }
+      .skill-desc {
+        font-size: 0.6rem;
+      }
+      .skills-section h2 {
+        font-size: 1.8rem;
+      }
+      .skills-subtext {
+        font-size: 0.95rem;
+        margin-bottom: 32px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .skills-grid {
+        gap: 10px;
+      }
+      .skill-card {
+        padding: 14px 6px 12px;
+        min-height: 120px;
+        border-radius: 12px;
+      }
+      .skill-name {
+        font-size: 0.7rem;
+        margin-bottom: 8px;
+      }
+      .logo-wrapper {
+        height: 34px;
+        width: 34px;
+        margin-bottom: 8px;
+      }
+      .logo-wrapper img {
+        max-width: 34px;
+      }
+      .sql-icon {
+        font-size: 1.8rem;
+      }
+      .skill-desc {
+        font-size: 0.5rem;
+        letter-spacing: 0.4px;
+      }
+      .skills-section h2 {
+        font-size: 1.3rem;
+      }
+      .skills-section {
+        padding: 60px 0 70px;
+      }
+      .skills-subtext {
+        font-size: 0.8rem;
+        margin-bottom: 24px;
+      }
+    }
+  </style>
+</head>
 
 <body>
 
   <div class="cursor-glow"></div>
 
-
-  <!-- =========================
-       NAVIGATION
-  ========================== -->
-
+  <!-- NAVIGATION -->
   <header class="header">
 
     <nav class="nav">
 
-      <a href="#home" class="brand">
-
+      <a href="#" class="brand">
         <span>OBL</span>
-
-        <small>
-          PORTFOLIO
-        </small>
-
+        <small>PORTFOLIO</small>
       </a>
-
 
       <button
         class="menu"
@@ -57,7 +285,6 @@
         <span></span>
 
       </button>
-
 
       <div class="nav-links" id="navLinks">
 
@@ -92,25 +319,18 @@
   </header>
 
 
-
-  <!-- =========================
-       HOME
-  ========================== -->
-
+  <!-- HOME -->
   <main id="home">
 
     <section class="hero">
 
       <div class="grid-lines"></div>
 
-
       <div class="hero-content">
 
 
         <!-- LEFT SIDE -->
-
         <div class="hero-copy">
-
 
           <div class="status">
 
@@ -141,9 +361,7 @@
 
           <div class="role-wrap">
 
-            <span>
-              I AM AN
-            </span>
+            <span>I AM AN</span>
 
             <strong id="role">
               ASPIRING DATA SCIENTIST
@@ -169,7 +387,6 @@
 
 
           <!-- BUTTONS -->
-
           <div class="actions">
 
             <a
@@ -195,23 +412,18 @@
 
 
           <!-- SOCIAL LINKS -->
-
           <div class="socials">
 
             <a
               href="https://www.linkedin.com/in/olebogeng-botlhale-leshage-b3b57b211"
-              target="_blank"
-              rel="noopener noreferrer">
+              target="_blank">
 
               LinkedIn ↗
 
             </a>
 
 
-            <a
-              href="https://github.com/Olebogeng-leshage"
-              target="_blank"
-              rel="noopener noreferrer">
+            <a href="#">
 
               GitHub ↗
 
@@ -227,13 +439,10 @@
 
           </div>
 
-
         </div>
 
 
-
         <!-- RIGHT SIDE -->
-
         <div class="hero-visual">
 
 
@@ -264,7 +473,6 @@
 
 
           <!-- PROFILE IMAGE -->
-
           <div class="portrait-frame">
 
             <div class="corner c1"></div>
@@ -281,7 +489,6 @@
 
 
           <!-- FLOATING CARD -->
-
           <div class="floating-card card-top">
 
             <span class="mini-label">
@@ -327,7 +534,6 @@
 
           </div>
 
-
         </div>
 
       </div>
@@ -335,75 +541,33 @@
     </section>
 
 
-
-    <!-- =========================
-         MOVING SKILLS BAR
-    ========================== -->
-
+    <!-- MOVING SKILLS BAR -->
     <section class="marquee">
 
       <div class="marquee-track">
 
-        <span>
-          STATISTICS
-        </span>
-
+        <span>STATISTICS</span>
         <b>✦</b>
 
-
-        <span>
-          DATA SCIENCE
-        </span>
-
+        <span>DATA SCIENCE</span>
         <b>✦</b>
 
-
-        <span>
-          BUSINESS ANALYTICS
-        </span>
-
+        <span>BUSINESS ANALYTICS</span>
         <b>✦</b>
 
-
-        <span>
-          ARTIFICIAL INTELLIGENCE
-        </span>
-
+        <span>ARTIFICIAL INTELLIGENCE</span>
         <b>✦</b>
 
-
-        <span>
-          SOFTWARE DEVELOPMENT
-        </span>
-
+        <span>SOFTWARE DEVELOPMENT</span>
         <b>✦</b>
 
-
-        <span>
-          CLOUD
-        </span>
-
+        <span>CLOUD</span>
         <b>✦</b>
 
-
-        <span>
-          DATA VISUALISATION
-        </span>
-
+        <span>STATISTICS</span>
         <b>✦</b>
 
-
-        <span>
-          STATISTICS
-        </span>
-
-        <b>✦</b>
-
-
-        <span>
-          DATA SCIENCE
-        </span>
-
+        <span>DATA SCIENCE</span>
         <b>✦</b>
 
       </div>
@@ -411,15 +575,10 @@
     </section>
 
 
-
-    <!-- =========================
-         ABOUT
-    ========================== -->
-
+    <!-- PROFESSIONAL IDENTITY -->
     <section class="identity" id="about">
 
       <div class="section-inner">
-
 
         <p class="section-tag">
 
@@ -445,10 +604,6 @@
           business understanding and modern technology
           to solve real-world problems with data.
 
-          I am developing practical experience across
-          data science, business analytics, financial
-          analysis, statistics and software development.
-
         </p>
 
 
@@ -464,10 +619,8 @@
             </h3>
 
             <p>
-
               Finding patterns, building models and
               turning data into actionable insights.
-
             </p>
 
           </article>
@@ -482,10 +635,8 @@
             </h3>
 
             <p>
-
               Using quantitative analysis to understand
-              financial performance, trends and risk.
-
+              financial performance and risk.
             </p>
 
           </article>
@@ -500,10 +651,8 @@
             </h3>
 
             <p>
-
               Connecting data and business problems
               to support better decisions.
-
             </p>
 
           </article>
@@ -518,10 +667,8 @@
             </h3>
 
             <p>
-
               Applying statistical methods to answer
               meaningful research questions.
-
             </p>
 
           </article>
@@ -534,1236 +681,123 @@
     </section>
 
 
-
-    <!-- =========================
-         SKILLS
-    ========================== -->
-
+    <!-- ========================================================== -->
+    <!-- ===============  SKILLS SECTION (NEW) =================== -->
+    <!-- ========================================================== -->
     <section class="skills-section" id="skills">
 
       <div class="section-inner">
 
-
         <p class="section-tag">
-
-          02 — TECHNICAL SKILLS
-
+          02 — SKILLS &amp; TOOLS
         </p>
 
+        <h2>My Tech Stack</h2>
 
-        <h2>
-
-          Tools I use to<br>
-
-          <span>
-            build with data.
-          </span>
-
-        </h2>
-
-
-        <p class="identity-text">
-
-          A growing technical toolkit focused on
-          statistics, analytics, programming,
-          visualisation and technology.
-
+        <p class="skills-subtext">
+          Tools and technologies I work with — from data
+          analysis to application development.
         </p>
-
-
-        <!-- 4 PER ROW -->
 
         <div class="skills-grid">
 
-
-          <!-- 01 EXCEL -->
-
-          <article class="skill-card">
-
-            <div class="skill-logo">
-
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftoffice/microsoftoffice-original.svg"
-                alt="Microsoft Excel logo">
-
+          <!-- Microsoft Excel -->
+          <div class="skill-card">
+            <p class="skill-name">Microsoft Excel</p>
+            <div class="logo-wrapper">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/microsoftexcel.svg" alt="Microsoft Excel">
             </div>
-
-
-            <div class="skill-number">
-              01
-            </div>
-
-
-            <h3>
-              Microsoft Excel
-            </h3>
-
-
-            <p>
-
-              Data analysis, modelling, reporting,
-              dashboards and business analysis.
-
-            </p>
-
-          </article>
-
-
-
-          <!-- 02 POWER BI -->
-
-          <article class="skill-card">
-
-            <div class="skill-logo powerbi-logo">
-
-              <span></span>
-              <span></span>
-              <span></span>
-
-            </div>
-
-
-            <div class="skill-number">
-              02
-            </div>
-
-
-            <h3>
-              Power BI
-            </h3>
-
-
-            <p>
-
-              Interactive dashboards, visualisation
-              and business intelligence.
-
-            </p>
-
-          </article>
-
-
-
-          <!-- 03 PYTHON -->
-
-          <article class="skill-card">
-
-            <div class="skill-logo">
-
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-                alt="Python logo">
-
-            </div>
-
-
-            <div class="skill-number">
-              03
-            </div>
-
-
-            <h3>
-              Python
-            </h3>
-
-
-            <p>
-
-              Data analysis, statistical computing,
-              automation and data science.
-
-            </p>
-
-          </article>
-
-
-
-          <!-- 04 SAS -->
-
-          <article class="skill-card">
-
-            <div class="skill-logo sas-logo">
-
-              SAS
-
-            </div>
-
-
-            <div class="skill-number">
-              04
-            </div>
-
-
-            <h3>
-              SAS
-            </h3>
-
-
-            <p>
-
-              Statistical computing, programming
-              and data analysis.
-
-            </p>
-
-          </article>
-
-
-
-          <!-- 05 SQL -->
-
-          <article class="skill-card">
-
-            <div class="skill-logo">
-
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
-                alt="SQL logo">
-
-            </div>
-
-
-            <div class="skill-number">
-              05
-            </div>
-
-
-            <h3>
-              SQL
-            </h3>
-
-
-            <p>
-
-              Data querying, database analysis
-              and information management.
-
-            </p>
-
-          </article>
-
-
-
-          <!-- 06 GITHUB -->
-
-          <article class="skill-card">
-
-            <div class="skill-logo">
-
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
-                alt="GitHub logo">
-
-            </div>
-
-
-            <div class="skill-number">
-              06
-            </div>
-
-
-            <h3>
-              GitHub
-            </h3>
-
-
-            <p>
-
-              Version control, repositories and
-              collaborative software development.
-
-            </p>
-
-          </article>
-
-
-
-          <!-- 07 DATABRICKS -->
-
-          <article class="skill-card">
-
-            <div class="skill-logo">
-
-              <img
-                src="https://cdn.simpleicons.org/databricks"
-                alt="Databricks logo">
-
-            </div>
-
-
-            <div class="skill-number">
-              07
-            </div>
-
-
-            <h3>
-              Databricks
-            </h3>
-
-
-            <p>
-
-              Data engineering, analytics and
-              modern data platform technologies.
-
-            </p>
-
-          </article>
-
-
-
-          <!-- 08 VISUAL STUDIO -->
-
-          <article class="skill-card">
-
-            <div class="skill-logo">
-
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg"
-                alt="Visual Studio logo">
-
-            </div>
-
-
-            <div class="skill-number">
-              08
-            </div>
-
-
-            <h3>
-              Visual Studio
-            </h3>
-
-
-            <p>
-
-              Software development, programming
-              and application development.
-
-            </p>
-
-          </article>
-
-
-
-          <!-- 09 FLUTTER -->
-
-          <article class="skill-card">
-
-            <div class="skill-logo">
-
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg"
-                alt="Flutter logo">
-
-            </div>
-
-
-            <div class="skill-number">
-              09
-            </div>
-
-
-            <h3>
-              Flutter
-            </h3>
-
-
-            <p>
-
-              Cross-platform application development
-              and mobile interfaces.
-
-            </p>
-
-          </article>
-
-
-
-          <!-- 10 STATISTICS -->
-
-          <article class="skill-card">
-
-            <div class="skill-logo statistics-logo">
-
-              Σ
-
-            </div>
-
-
-            <div class="skill-number">
-              10
-            </div>
-
-
-            <h3>
-              Statistics
-            </h3>
-
-
-            <p>
-
-              Statistical modelling, inference,
-              probability and quantitative analysis.
-
-            </p>
-
-          </article>
-
-
-
-          <!-- 11 DATA VISUALISATION -->
-
-          <article class="skill-card">
-
-            <div class="skill-logo visual-logo">
-
-              ◫
-
-            </div>
-
-
-            <div class="skill-number">
-              11
-            </div>
-
-
-            <h3>
-              Data Visualisation
-            </h3>
-
-
-            <p>
-
-              Transforming complex datasets into
-              clear and meaningful insights.
-
-            </p>
-
-          </article>
-
-
-
-          <!-- 12 AI -->
-
-          <article class="skill-card">
-
-            <div class="skill-logo ai-logo">
-
-              AI
-
-            </div>
-
-
-            <div class="skill-number">
-              12
-            </div>
-
-
-            <h3>
-              Artificial Intelligence
-            </h3>
-
-
-            <p>
-
-              Exploring intelligent systems,
-              machine learning and AI applications.
-
-            </p>
-
-          </article>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         PROJECTS
-    ========================== -->
-
-    <section class="projects-section" id="projects">
-
-      <div class="section-inner">
-
-
-        <p class="section-tag">
-
-          03 — SELECTED PROJECTS
-
-        </p>
-
-
-        <h2>
-
-          Turning ideas<br>
-
-          <span>
-            into projects.
-          </span>
-
-        </h2>
-
-
-        <p class="identity-text">
-
-          Practical projects designed to demonstrate
-          analytical thinking, technical skills and
-          real-world problem solving.
-
-        </p>
-
-
-        <div class="projects-grid">
-
-
-          <!-- PROJECT 01 -->
-
-          <article class="project-card">
-
-            <div class="project-top">
-
-              <span>
-                PROJECT 01
-              </span>
-
-              <span>
-                DATA ANALYTICS
-              </span>
-
-            </div>
-
-
-            <h3>
-              South African Unemployment Dashboard
-            </h3>
-
-
-            <p>
-
-              An analytical dashboard focused on
-              understanding unemployment trends
-              and patterns within South Africa.
-
-            </p>
-
-
-            <div class="project-tech">
-
-              <span>
-                Excel
-              </span>
-
-              <span>
-                Power BI
-              </span>
-
-              <span>
-                Statistics
-              </span>
-
-            </div>
-
-
-            <a
-              href="https://github.com/Olebogeng-leshage"
-              target="_blank"
-              rel="noopener noreferrer">
-
-              View Project ↗
-
-            </a>
-
-          </article>
-
-
-
-          <!-- PROJECT 02 -->
-
-          <article class="project-card">
-
-            <div class="project-top">
-
-              <span>
-                PROJECT 02
-              </span>
-
-              <span>
-                BUSINESS ANALYTICS
-              </span>
-
-            </div>
-
-
-            <h3>
-              Sales Performance Dashboard
-            </h3>
-
-
-            <p>
-
-              A sales analytics dashboard designed
-              to monitor revenue, products,
-              performance and business trends
-              using South African Rand values.
-
-            </p>
-
-
-            <div class="project-tech">
-
-              <span>
-                Power BI
-              </span>
-
-              <span>
-                Excel
-              </span>
-
-              <span>
-                Data Analysis
-              </span>
-
-            </div>
-
-
-            <a
-              href="https://github.com/Olebogeng-leshage"
-              target="_blank"
-              rel="noopener noreferrer">
-
-              View Project ↗
-
-            </a>
-
-          </article>
-
-
-
-          <!-- PROJECT 03 -->
-
-          <article class="project-card">
-
-            <div class="project-top">
-
-              <span>
-                PROJECT 03
-              </span>
-
-              <span>
-                WEB DEVELOPMENT
-              </span>
-
-            </div>
-
-
-            <h3>
-              Personal Portfolio
-            </h3>
-
-
-            <p>
-
-              A professional portfolio website
-              showcasing my academic journey,
-              technical skills, projects and
-              professional development.
-
-            </p>
-
-
-            <div class="project-tech">
-
-              <span>
-                HTML
-              </span>
-
-              <span>
-                CSS
-              </span>
-
-              <span>
-                JavaScript
-              </span>
-
-            </div>
-
-
-            <a
-              href="https://github.com/Olebogeng-leshage/olebogeng-leshage-portfolio"
-              target="_blank"
-              rel="noopener noreferrer">
-
-              GitHub Repository ↗
-
-            </a>
-
-          </article>
-
-
-
-          <!-- PROJECT 04 -->
-
-          <article class="project-card">
-
-            <div class="project-top">
-
-              <span>
-                PROJECT 04
-              </span>
-
-              <span>
-                SOFTWARE
-              </span>
-
-            </div>
-
-
-            <h3>
-              Calculator Application
-            </h3>
-
-
-            <p>
-
-              A simple web-based calculator developed
-              as part of my journey into practical
-              software development and GitHub projects.
-
-            </p>
-
-
-            <div class="project-tech">
-
-              <span>
-                HTML
-              </span>
-
-              <span>
-                CSS
-              </span>
-
-              <span>
-                JavaScript
-              </span>
-
-            </div>
-
-
-            <a
-              href="https://github.com/Olebogeng-leshage"
-              target="_blank"
-              rel="noopener noreferrer">
-
-              View Projects ↗
-
-            </a>
-
-          </article>
-
-
-        </div>
-
-
-        <div class="projects-footer">
-
-          <a
-            href="https://github.com/Olebogeng-leshage"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn btn-main">
-
-            Explore My GitHub
-
-            <span>
-              ↗
-            </span>
-
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         EXPERIENCE
-    ========================== -->
-
-    <section class="experience-section" id="experience">
-
-      <div class="section-inner">
-
-
-        <p class="section-tag">
-
-          04 — EXPERIENCE & LEADERSHIP
-
-        </p>
-
-
-        <h2>
-
-          Learning beyond<br>
-
-          <span>
-            the classroom.
-          </span>
-
-        </h2>
-
-
-        <div class="experience-list">
-
-
-          <article class="experience-item">
-
-            <div class="experience-date">
-              2026 — PRESENT
-            </div>
-
-
-            <div class="experience-content">
-
-              <h3>
-                Deputy Chairperson
-              </h3>
-
-
-              <h4>
-                Ambassadors for Change — NWU
-              </h4>
-
-
-              <p>
-
-                Supporting student leadership,
-                coordination, community engagement
-                and initiatives focused on positive
-                social impact.
-
-              </p>
-
-            </div>
-
-          </article>
-
-
-
-          <article class="experience-item">
-
-            <div class="experience-date">
-              CURRENT
-            </div>
-
-
-            <div class="experience-content">
-
-              <h3>
-                BCom in Statistics
-              </h3>
-
-
-              <h4>
-                North-West University
-              </h4>
-
-
-              <p>
-
-                Developing a strong foundation in
-                Statistics, Economics and Operations
-                Research, with practical exposure to
-                statistical computing and data analysis.
-
-              </p>
-
-            </div>
-
-          </article>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         EDUCATION
-    ========================== -->
-
-    <section class="education-section">
-
-      <div class="section-inner">
-
-
-        <p class="section-tag">
-
-          05 — EDUCATION
-
-        </p>
-
-
-        <h2>
-
-          Building the<br>
-
-          <span>
-            foundation.
-          </span>
-
-        </h2>
-
-
-        <div class="education-card">
-
-
-          <div class="education-year">
-            CURRENT
+            <p class="skill-desc">Data Analysis</p>
           </div>
 
-
-          <div>
-
-            <h3>
-              Bachelor of Commerce in Statistics
-            </h3>
-
-
-            <p class="institution">
-              North-West University
-            </p>
-
-
-            <p>
-
-              Majors:
-
-              <strong>
-                Statistics • Economics • Operations Research
-              </strong>
-
-            </p>
-
-
-            <p>
-
-              Academic focus includes statistical
-              computing, quantitative analysis,
-              operations research, economics and
-              data-driven decision making.
-
-            </p>
-
+          <!-- Power BI -->
+          <div class="skill-card">
+            <p class="skill-name">Power BI</p>
+            <div class="logo-wrapper">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/powerbi.svg" alt="Power BI">
+            </div>
+            <p class="skill-desc">Business Intelligence</p>
           </div>
 
+          <!-- Python -->
+          <div class="skill-card">
+            <p class="skill-name">Python</p>
+            <div class="logo-wrapper">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/python.svg" alt="Python">
+            </div>
+            <p class="skill-desc">Data Science</p>
+          </div>
+
+          <!-- SQL -->
+          <div class="skill-card">
+            <p class="skill-name">SQL</p>
+            <div class="logo-wrapper">
+              <i class="fas fa-database sql-icon"></i>
+            </div>
+            <p class="skill-desc">Database Management</p>
+          </div>
+
+          <!-- Flutter -->
+          <div class="skill-card">
+            <p class="skill-name">Flutter</p>
+            <div class="logo-wrapper">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/flutter.svg" alt="Flutter">
+            </div>
+            <p class="skill-desc">App Development</p>
+          </div>
+
+          <!-- GitHub -->
+          <div class="skill-card">
+            <p class="skill-name">GitHub</p>
+            <div class="logo-wrapper">
+              <img class="dark-logo" src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/github.svg" alt="GitHub">
+            </div>
+            <p class="skill-desc">Version Control</p>
+          </div>
+
+          <!-- Databricks -->
+          <div class="skill-card">
+            <p class="skill-name">Databricks</p>
+            <div class="logo-wrapper">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/databricks.svg" alt="Databricks">
+            </div>
+            <p class="skill-desc">Data Engineering</p>
+          </div>
+
+          <!-- Visual Studio -->
+          <div class="skill-card">
+            <p class="skill-name">Visual Studio</p>
+            <div class="logo-wrapper">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/visualstudio.svg" alt="Visual Studio">
+            </div>
+            <p class="skill-desc">Software Development</p>
+          </div>
 
         </div>
 
       </div>
 
     </section>
-
-
-
-    <!-- =========================
-         CERTIFICATIONS
-    ========================== -->
-
-    <section class="certificates-section">
-
-      <div class="section-inner">
-
-
-        <p class="section-tag">
-
-          06 — CERTIFICATIONS & DEVELOPMENT
-
-        </p>
-
-
-        <h2>
-
-          Continuously<br>
-
-          <span>
-            developing.
-          </span>
-
-        </h2>
-
-
-        <div class="certificate-grid">
-
-
-          <article class="certificate-card">
-
-            <span>
-              CERTIFICATION
-            </span>
-
-
-            <h3>
-              Solar PV Systems and Design
-            </h3>
-
-
-            <p>
-              Theory Short Learning Programme
-            </p>
-
-
-            <small>
-              University of Johannesburg — PEETS Energy Unit
-            </small>
-
-          </article>
-
-
-
-          <article class="certificate-card">
-
-            <span>
-              PROFESSIONAL DEVELOPMENT
-            </span>
-
-
-            <h3>
-              Statistical Computing
-            </h3>
-
-
-            <p>
-              Introduction to SAS Programming
-            </p>
-
-
-            <small>
-              Statistical Computing — SAS Programming
-            </small>
-
-          </article>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         CONTACT
-    ========================== -->
-
-    <section class="contact-section" id="contact">
-
-      <div class="section-inner">
-
-
-        <p class="section-tag">
-
-          07 — LET'S CONNECT
-
-        </p>
-
-
-        <h2>
-
-          Have an idea?<br>
-
-          <span>
-            Let's build it.
-          </span>
-
-        </h2>
-
-
-        <p class="identity-text">
-
-          I am open to opportunities, collaborations,
-          data projects, internships, student initiatives
-          and meaningful conversations around data,
-          business and technology.
-
-        </p>
-
-
-        <div class="contact-grid">
-
-
-          <!-- EMAIL -->
-
-          <a
-            href="mailto:olebogengleshage@gmail.com"
-            class="contact-card">
-
-            <span>
-              EMAIL
-            </span>
-
-
-            <strong>
-              olebogengleshage@gmail.com
-            </strong>
-
-
-            <small>
-              Send me an email ↗
-            </small>
-
-          </a>
-
-
-
-          <!-- LINKEDIN -->
-
-          <a
-            href="https://www.linkedin.com/in/olebogeng-botlhale-leshage-b3b57b211"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="contact-card">
-
-            <span>
-              LINKEDIN
-            </span>
-
-
-            <strong>
-              Olebogeng Botlhale Leshage
-            </strong>
-
-
-            <small>
-              Connect with me ↗
-            </small>
-
-          </a>
-
-
-
-          <!-- GITHUB -->
-
-          <a
-            href="https://github.com/Olebogeng-leshage"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="contact-card">
-
-            <span>
-              GITHUB
-            </span>
-
-
-            <strong>
-              Olebogeng-leshage
-            </strong>
-
-
-            <small>
-              Explore my repositories ↗
-            </small>
-
-          </a>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
 
   </main>
 
 
-
-  <!-- =========================
-       FOOTER
-  ========================== -->
-
+  <!-- FOOTER -->
   <footer>
 
-
-    <div class="footer-brand">
-
+    <div>
       OBL<span>.</span>
-
     </div>
-
 
     <p>
-
-      Built by Olebogeng Botlhale Leshage.
-
+      More sections coming next —
+      Projects • Experience • Contact
     </p>
-
-
-    <div class="footer-links">
-
-
-      <a
-        href="https://www.linkedin.com/in/olebogeng-botlhale-leshage-b3b57b211"
-        target="_blank"
-        rel="noopener noreferrer">
-
-        LinkedIn
-
-      </a>
-
-
-      <a
-        href="https://github.com/Olebogeng-leshage"
-        target="_blank"
-        rel="noopener noreferrer">
-
-        GitHub
-
-      </a>
-
-
-      <a
-        href="mailto:olebogengleshage@gmail.com">
-
-        Email
-
-      </a>
-
-
-    </div>
-
-
-    <small>
-
-      © 2026 Olebogeng Botlhale Leshage.
-      All rights reserved.
-
-    </small>
-
 
   </footer>
 
 
-
-  <!-- =========================
-       JAVASCRIPT
-  ========================== -->
-
   <script src="script.js"></script>
 
 </body>
-
 </html>
-```
