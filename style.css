@@ -1141,7 +1141,7 @@ h1 span {
 
 
 /* ============================================================
-   SKILLS SECTION — 4-COLUMN GRID
+   SKILLS SECTION
    ============================================================ */
 
 .skills-section {
@@ -1270,8 +1270,9 @@ h1 span {
   font-family: 'DM Mono', monospace;
 }
 
+
 /* ============================================================
-   PROJECTS SECTION — 3-COLUMN GRID with clickable cards
+   PROJECTS SECTION
    ============================================================ */
 
 .projects-section {
@@ -1311,14 +1312,12 @@ h1 span {
   line-height: 1.8;
 }
 
-/* 3‑column grid */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 
-/* Whole card is a clickable link */
 .project-card {
   display: flex;
   flex-direction: column;
@@ -1378,7 +1377,6 @@ h1 span {
   text-transform: uppercase;
 }
 
-/* Visible link indicator */
 .project-link {
   font: 500 0.7rem 'DM Mono';
   color: var(--lime);
@@ -1389,6 +1387,239 @@ h1 span {
 
 .project-card:hover .project-link {
   color: #efff9b;
+}
+
+
+/* ============================================================
+   EXPERIENCE SECTION
+   ============================================================ */
+
+.experience-section {
+  padding: 130px 0;
+  background: var(--bg);
+  border-top: 1px solid var(--line);
+}
+
+.experience-section .section-inner {
+  width: min(var(--max), calc(100% - 48px));
+  margin: auto;
+}
+
+.experience-section .section-tag {
+  font: 500 .68rem 'DM Mono';
+  letter-spacing: .2em;
+  color: var(--lime);
+  margin-bottom: 19px;
+  display: inline-block;
+  border-left: 3px solid var(--lime);
+  padding-left: 14px;
+}
+
+.experience-section h2 {
+  font: 700 clamp(3rem, 6vw, 6rem)/.95 'Space Grotesk';
+  letter-spacing: -.07em;
+  max-width: 800px;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.experience-subtext {
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin-bottom: 48px;
+  max-width: 600px;
+  line-height: 1.8;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.experience-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 28px 24px;
+  transition: all 0.35s ease;
+}
+
+.experience-card:hover {
+  border-color: var(--lime);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px -12px rgba(216, 255, 63, 0.06);
+}
+
+.exp-header {
+  margin-bottom: 16px;
+}
+
+.exp-date {
+  font: 500 0.6rem 'DM Mono';
+  color: var(--lime);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.exp-header h3 {
+  font: 600 1.1rem 'Space Grotesk';
+  color: var(--text);
+  letter-spacing: -.02em;
+}
+
+.exp-company {
+  font: 500 0.85rem 'Inter';
+  color: var(--muted);
+  display: block;
+  margin-top: 2px;
+}
+
+.exp-duties {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.exp-duties li {
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  padding: 4px 0 4px 18px;
+  position: relative;
+}
+
+.exp-duties li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--lime);
+  font-size: 0.7rem;
+}
+
+
+/* ============================================================
+   EDUCATION SECTION
+   ============================================================ */
+
+.education-section {
+  padding: 130px 0;
+  background: var(--bg);
+  border-top: 1px solid var(--line);
+}
+
+.education-section .section-inner {
+  width: min(var(--max), calc(100% - 48px));
+  margin: auto;
+}
+
+.education-section .section-tag {
+  font: 500 .68rem 'DM Mono';
+  letter-spacing: .2em;
+  color: var(--lime);
+  margin-bottom: 19px;
+  display: inline-block;
+  border-left: 3px solid var(--lime);
+  padding-left: 14px;
+}
+
+.education-section h2 {
+  font: 700 clamp(3rem, 6vw, 6rem)/.95 'Space Grotesk';
+  letter-spacing: -.07em;
+  max-width: 800px;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.education-subtext {
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin-bottom: 48px;
+  max-width: 600px;
+  line-height: 1.8;
+}
+
+.education-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.education-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 28px 24px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  transition: all 0.35s ease;
+}
+
+.education-card:hover {
+  border-color: var(--lime);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px -12px rgba(216, 255, 63, 0.06);
+}
+
+.edu-icon {
+  font-size: 2rem;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.edu-content {
+  flex: 1;
+}
+
+.edu-content h3 {
+  font: 600 1.1rem 'Space Grotesk';
+  color: var(--text);
+  letter-spacing: -.02em;
+  margin-bottom: 2px;
+}
+
+.edu-institution {
+  font: 500 0.85rem 'Inter';
+  color: var(--muted);
+  display: block;
+}
+
+.edu-date {
+  font: 500 0.6rem 'DM Mono';
+  color: var(--lime);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: block;
+  margin-top: 4px;
+}
+
+.edu-desc {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+.edu-majors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.edu-majors span {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--line);
+  padding: 2px 12px;
+  border-radius: 20px;
+  font-size: 0.6rem;
+  color: var(--muted);
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
 }
 
 
@@ -1492,6 +1723,14 @@ footer div span {
   .project-card p {
     font-size: 0.85rem;
   }
+
+  .experience-grid {
+    gap: 18px;
+  }
+
+  .education-grid {
+    gap: 18px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1589,7 +1828,6 @@ footer div span {
     padding: 80px 0;
   }
 
-  /* projects: switch to 2 columns */
   .projects-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
@@ -1622,6 +1860,40 @@ footer div span {
   }
 
   .projects-section {
+    padding: 80px 0;
+  }
+
+  .experience-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .experience-card {
+    padding: 22px 18px;
+  }
+
+  .experience-section h2 {
+    font-size: clamp(2rem, 4.5vw, 3rem);
+  }
+
+  .experience-section {
+    padding: 80px 0;
+  }
+
+  .education-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .education-card {
+    padding: 22px 18px;
+  }
+
+  .education-section h2 {
+    font-size: clamp(2rem, 4.5vw, 3rem);
+  }
+
+  .education-section {
     padding: 80px 0;
   }
 }
@@ -1744,7 +2016,6 @@ footer div span {
     width: calc(100% - 28px);
   }
 
-  /* projects: single column */
   .projects-grid {
     grid-template-columns: 1fr;
     gap: 14px;
@@ -1789,5 +2060,43 @@ footer div span {
 
   .projects-section .section-inner {
     width: calc(100% - 28px);
+  }
+
+  .experience-card {
+    padding: 18px 14px;
+  }
+
+  .exp-header h3 {
+    font-size: 0.95rem;
+  }
+
+  .exp-duties li {
+    font-size: 0.78rem;
+  }
+
+  .experience-section {
+    padding: 60px 0 70px;
+  }
+
+  .education-card {
+    padding: 18px 14px;
+    gap: 14px;
+  }
+
+  .edu-icon {
+    font-size: 1.6rem;
+  }
+
+  .edu-content h3 {
+    font-size: 0.95rem;
+  }
+
+  .edu-majors span {
+    font-size: 0.5rem;
+    padding: 2px 8px;
+  }
+
+  .education-section {
+    padding: 60px 0 70px;
   }
 }
