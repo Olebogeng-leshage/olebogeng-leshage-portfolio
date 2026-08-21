@@ -1182,209 +1182,394 @@ footer div span {
 }
 
 
-/* MOBILE */
+/* ============================================================
+   SKILLS SECTION — 4-COLUMN GRID WITH LOGOS (NEW)
+   ============================================================ */
 
-@media(max-width:900px) {
-
-  .nav-links {
-
-    display: none;
-
-    position: absolute;
-
-    top: 82px;
-
-    left: 20px;
-
-    right: 20px;
-
-    background: #101216;
-
-    border:
-      1px solid var(--line);
-
-    padding: 20px;
-
-    flex-direction: column;
-
-    gap: 8px;
-
-  }
-
-
-  .nav-links.open {
-
-    display: flex;
-
-  }
-
-
-  .menu {
-
-    display: block;
-
-  }
-
-
-  .hero {
-
-    min-height: auto;
-
-    padding: 150px 0 80px;
-
-  }
-
-
-  .hero-content {
-
-    grid-template-columns: 1fr;
-
-  }
-
-
-  .hero-visual {
-
-    height: 570px;
-
-  }
-
-
-  .hero-copy {
-
-    order: 1;
-
-  }
-
-
-  .hero-visual {
-
-    order: 2;
-
-  }
-
-
-  .identity-grid {
-
-    grid-template-columns:
-      1fr 1fr;
-
-  }
-
+.skills-section {
+  padding: 130px 0;
+  background: var(--bg);
+  border-top: 1px solid var(--line);
 }
 
+.skills-section .section-inner {
+  width: min(var(--max), calc(100% - 48px));
+  margin: auto;
+}
 
-@media(max-width:560px) {
+.skills-section .section-tag {
+  font: 500 .68rem 'DM Mono';
+  letter-spacing: .2em;
+  color: var(--lime);
+  margin-bottom: 19px;
+  display: inline-block;
+  border-left: 3px solid var(--lime);
+  padding-left: 14px;
+}
 
-  .nav {
+.skills-section h2 {
+  font: 700 clamp(3rem, 6vw, 6rem)/.95 'Space Grotesk';
+  letter-spacing: -.07em;
+  max-width: 800px;
+  color: var(--text);
+  margin-bottom: 8px;
+}
 
-    width:
-      calc(100% - 28px);
+.skills-subtext {
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin-bottom: 48px;
+  max-width: 520px;
+  line-height: 1.8;
+}
 
+/* ===== GRID — EXACTLY 4 COLUMNS ===== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* ===== SKILL CARD ===== */
+.skill-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px 28px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  text-align: center;
+  transition: all 0.35s ease;
+  min-height: 200px;
+}
+
+.skill-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--lime);
+  box-shadow: 0 16px 48px -12px rgba(216, 255, 63, 0.08);
+}
+
+/* ---- Skill Name (top) ---- */
+.skill-name {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 16px 0;
+  letter-spacing: 0.2px;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* ---- Logo (middle) ---- */
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  width: 56px;
+  margin-bottom: 16px;
+}
+
+.logo-wrapper img {
+  height: 100%;
+  width: auto;
+  max-width: 56px;
+  object-fit: contain;
+  filter: brightness(1) saturate(1);
+  transition: filter 0.3s ease, transform 0.3s ease;
+  display: block;
+}
+
+.skill-card:hover .logo-wrapper img {
+  filter: brightness(1.2) saturate(1.1);
+  transform: scale(1.08);
+}
+
+/* ---- GitHub dark logo fix ---- */
+.logo-wrapper img.dark-logo {
+  filter: brightness(0) invert(1) brightness(0.9);
+}
+
+.skill-card:hover .logo-wrapper img.dark-logo {
+  filter: brightness(0) invert(1) brightness(1.1);
+}
+
+/* ---- SQL icon (Font Awesome) ---- */
+.sql-icon {
+  font-size: 3.2rem;
+  color: var(--lime);
+  transition: all 0.3s ease;
+  text-shadow: 0 0 24px rgba(216, 255, 63, 0.12);
+}
+
+.skill-card:hover .sql-icon {
+  transform: scale(1.08);
+  text-shadow: 0 0 40px rgba(216, 255, 63, 0.2);
+}
+
+/* ---- Description (bottom) ---- */
+.skill-desc {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--muted);
+  margin: 0;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  font-family: 'DM Mono', monospace;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1024px) {
+  .skills-grid {
+    gap: 18px;
   }
 
+  .skill-card {
+    padding: 24px 12px 20px;
+    min-height: 170px;
+  }
+
+  .skill-name {
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+  }
+
+  .logo-wrapper {
+    height: 48px;
+    width: 48px;
+    margin-bottom: 12px;
+  }
+
+  .logo-wrapper img {
+    max-width: 48px;
+  }
+
+  .sql-icon {
+    font-size: 2.6rem;
+  }
+
+  .skill-desc {
+    font-size: 0.65rem;
+  }
+
+  .skills-section h2 {
+    font-size: clamp(2.4rem, 5vw, 4rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .skill-card {
+    padding: 20px 10px 18px;
+    min-height: 150px;
+    border-radius: 4px;
+  }
+
+  .skill-name {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+  }
+
+  .logo-wrapper {
+    height: 42px;
+    width: 42px;
+    margin-bottom: 10px;
+  }
+
+  .logo-wrapper img {
+    max-width: 42px;
+  }
+
+  .sql-icon {
+    font-size: 2.2rem;
+  }
+
+  .skill-desc {
+    font-size: 0.6rem;
+  }
+
+  .skills-section h2 {
+    font-size: clamp(2rem, 4.5vw, 3rem);
+  }
+
+  .skills-subtext {
+    font-size: 0.95rem;
+    margin-bottom: 32px;
+  }
+
+  .skills-section {
+    padding: 80px 0;
+  }
+
+  /* Mobile nav fix */
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 82px;
+    left: 20px;
+    right: 20px;
+    background: #101216;
+    border: 1px solid var(--line);
+    padding: 20px;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .menu {
+    display: block;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 150px 0 80px;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-visual {
+    height: 570px;
+  }
+
+  .hero-copy {
+    order: 1;
+  }
+
+  .hero-visual {
+    order: 2;
+  }
+
+  .identity-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .nav {
+    width: calc(100% - 28px);
+  }
 
   .hero-content,
   .section-inner {
-
-    width:
-      calc(100% - 28px);
-
+    width: calc(100% - 28px);
   }
-
 
   h1 {
-
     font-size: 3.65rem;
-
   }
-
 
   .hero-visual {
-
     height: 500px;
-
   }
-
 
   .portrait-frame {
-
     width: 65%;
-
   }
-
 
   .data-ring {
-
     width: 430px;
-
     height: 430px;
-
   }
-
 
   .orbit {
-
     width: 480px;
-
     height: 180px;
-
   }
-
 
   .card-top {
-
     right: 0;
-
     top: 70px;
-
   }
-
 
   .card-bottom {
-
     left: 0;
-
     bottom: 60px;
-
   }
-
 
   .identity-grid {
-
     grid-template-columns: 1fr;
-
   }
-
 
   .identity-grid article {
-
     min-height: 210px;
-
   }
-
 
   .role-wrap {
-
     align-items: flex-start;
-
     flex-direction: column;
-
     gap: 5px;
-
   }
-
 
   .socials {
-
     flex-wrap: wrap;
-
   }
-
 
   footer {
-
     flex-direction: column;
+  }
+}
 
+@media (max-width: 480px) {
+  .skills-grid {
+    gap: 10px;
   }
 
+  .skill-card {
+    padding: 14px 6px 12px;
+    min-height: 120px;
+  }
+
+  .skill-name {
+    font-size: 0.7rem;
+    margin-bottom: 8px;
+  }
+
+  .logo-wrapper {
+    height: 34px;
+    width: 34px;
+    margin-bottom: 8px;
+  }
+
+  .logo-wrapper img {
+    max-width: 34px;
+  }
+
+  .sql-icon {
+    font-size: 1.8rem;
+  }
+
+  .skill-desc {
+    font-size: 0.5rem;
+    letter-spacing: 0.4px;
+  }
+
+  .skills-section h2 {
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+  }
+
+  .skills-section {
+    padding: 60px 0 70px;
+  }
+
+  .skills-subtext {
+    font-size: 0.8rem;
+    margin-bottom: 24px;
+  }
+
+  .skills-section .section-inner {
+    width: calc(100% - 28px);
+  }
 }
