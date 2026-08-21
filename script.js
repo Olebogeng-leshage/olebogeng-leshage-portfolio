@@ -1,6 +1,6 @@
 /* ==========================================
    OLEBOGENG BOTLHALE LESHAGE
-   PORTFOLIO JAVASCRIPT
+   PORTFOLIO JAVASCRIPT — UPDATED
 ========================================== */
 
 
@@ -119,7 +119,7 @@ if (cursorGlow) {
 ========================================== */
 
 const sections =
-  document.querySelectorAll("main section[id]");
+  document.querySelectorAll("section[id]");
 
 const navigationLinks =
   document.querySelectorAll(".nav-links a");
@@ -182,11 +182,26 @@ updateActiveNavigation();
 
 
 /* ==========================================
-   SCROLL REVEAL
+   SCROLL REVEAL — UPDATED WITH ALL SECTIONS
 ========================================== */
 
 const revealElements = document.querySelectorAll(
-  ".skill-card, .project-card, .timeline-item, .certification-card, .about-stat, .contact-card"
+  // About section
+  ".identity-grid article, .identity-text, .identity h2, .identity .section-tag, " +
+  // Skills section
+  ".skill-card, .skills-subtext, .skills-section h2, .skills-section .section-tag, " +
+  // Projects section
+  ".project-card, .projects-subtext, .projects-section h2, .projects-section .section-tag, " +
+  // Experience section
+  ".experience-card, .experience-subtext, .experience-section h2, .experience-section .section-tag, " +
+  // Education section
+  ".education-card, .education-subtext, .education-section h2, .education-section .section-tag, " +
+  // Certifications section
+  ".cert-card, .certifications-subtext, .certifications-section h2, .certifications-section .section-tag, " +
+  // Contact section
+  ".contact-form-wrapper, .contact-subtext, .contact-section h2, .contact-section .section-tag, " +
+  // Hero elements
+  ".hero-copy, .hero-visual, .status, .kicker, h1, .role-wrap, .intro, .actions, .socials"
 );
 
 
@@ -210,7 +225,8 @@ const revealObserver =
     },
 
     {
-      threshold: 0.12
+      threshold: 0.12,
+      rootMargin: "0px 0px -50px 0px"
     }
 
   );
@@ -218,9 +234,10 @@ const revealObserver =
 
 revealElements.forEach(element => {
 
-  element.classList.add("reveal");
-
-  revealObserver.observe(element);
+  if (element) {
+    element.classList.add("reveal");
+    revealObserver.observe(element);
+  }
 
 });
 
@@ -231,12 +248,17 @@ revealElements.forEach(element => {
 ========================================== */
 
 const buttons =
-  document.querySelectorAll(".btn");
+  document.querySelectorAll(".btn:not(.btn-outline), .cert-view, .project-card a");
 
 
 buttons.forEach(button => {
 
   button.addEventListener("click", function(event) {
+
+    // Don't create ripple on anchor links that navigate
+    if (this.tagName === "A" && this.getAttribute("href")?.startsWith("#")) {
+      return;
+    }
 
     const ripple =
       document.createElement("span");
@@ -245,7 +267,7 @@ buttons.forEach(button => {
 
 
     const rect =
-      button.getBoundingClientRect();
+      this.getBoundingClientRect();
 
 
     ripple.style.left =
@@ -255,7 +277,7 @@ buttons.forEach(button => {
       `${event.clientY - rect.top}px`;
 
 
-    button.appendChild(ripple);
+    this.appendChild(ripple);
 
 
     setTimeout(() => {
@@ -271,7 +293,7 @@ buttons.forEach(button => {
 
 
 /* ==========================================
-   IMAGE FALLBACK
+   IMAGE FALLBACK — WITH PLACEHOLDER
 ========================================== */
 
 const profileImage =
@@ -289,7 +311,25 @@ if (profileImage) {
 
     if (frame) {
 
-      frame.classList.add("no-image");
+      // Create a placeholder
+      const placeholder = document.createElement("div");
+      placeholder.className = "image-placeholder";
+      placeholder.textContent = "OBL";
+      placeholder.style.cssText = `
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        background: var(--panel, #101216);
+        color: var(--lime, #d8ff3f);
+        font-size: 3rem;
+        font-weight: 700;
+        font-family: 'Space Grotesk', sans-serif;
+        border-radius: 2px;
+      `;
+
+      frame.appendChild(placeholder);
 
     }
 
@@ -300,25 +340,74 @@ if (profileImage) {
 
 
 /* ==========================================
-   CURRENT YEAR
+   CURRENT YEAR — PRECISE UPDATE
 ========================================== */
 
-const footer =
-  document.querySelector("footer");
+const footerYear =
+  document.querySelector("footer .year, footer span:last-child");
 
 
-if (footer) {
+if (footerYear) {
 
   const year =
     new Date().getFullYear();
 
-  footer.innerHTML =
-    footer.innerHTML.replace(
-      "© 2026",
-      `© ${year}`
-    );
+  footerYear.textContent = year;
+
+} else {
+
+  // Fallback: update the footer text
+  const footer = document.querySelector("footer p");
+
+  if (footer) {
+
+    const year =
+      new Date().getFullYear();
+
+    footer.innerHTML =
+      footer.innerHTML.replace(
+        /© \d{4}/,
+        `© ${year}`
+      );
+
+  }
 
 }
+
+
+
+/* ==========================================
+   SMOOTH SCROLL FOR NAV LINKS
+========================================== */
+
+document.querySelectorAll('.nav-links a[href^="#"]').forEach(link => {
+
+  link.addEventListener("click", function(event) {
+
+    const targetId = this.getAttribute("href");
+
+    if (targetId === "#") return;
+
+    const targetElement = document.querySelector(targetId);
+
+    if (targetElement) {
+
+      event.preventDefault();
+
+      const headerHeight = document.querySelector(".header")?.offsetHeight || 82;
+
+      const targetPosition = targetElement.offsetTop - headerHeight;
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: "smooth"
+      });
+
+    }
+
+  });
+
+});
 
 
 
@@ -332,5 +421,88 @@ document.addEventListener(
 
     document.body.classList.add("page-loaded");
 
+    // Trigger scroll reveal for elements already in view
+    setTimeout(() => {
+      revealElements.forEach(element => {
+        const rect = element.getBoundingClientRect();
+        if (rect.top < window.innerHeight) {
+          element.classList.add("reveal-visible");
+        }
+      });
+    }, 200);
+
   }
 );
+
+
+
+/* ==========================================
+   KEYBOARD ACCESSIBILITY — ESCAPE CLOSES MENU
+========================================== */
+
+document.addEventListener("keydown", (event) => {
+
+  if (event.key === "Escape" && navLinks?.classList.contains("open")) {
+
+    navLinks.classList.remove("open");
+
+  }
+
+});
+
+
+
+/* ==========================================
+   ADD RIPPLE CSS (if not already in style.css)
+========================================== */
+
+// Check if ripple styles exist, if not, add them
+if (!document.querySelector("#ripple-styles")) {
+
+  const style = document.createElement("style");
+  style.id = "ripple-styles";
+  style.textContent = `
+    .ripple {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(216, 255, 63, 0.3);
+      width: 100px;
+      height: 100px;
+      transform: scale(0);
+      animation: ripple-animation 0.6s linear;
+      pointer-events: none;
+    }
+
+    @keyframes ripple-animation {
+      to {
+        transform: scale(4);
+        opacity: 0;
+      }
+    }
+
+    .btn, .cert-view {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-visible:nth-child(1) { transition-delay: 0.05s; }
+    .reveal-visible:nth-child(2) { transition-delay: 0.1s; }
+    .reveal-visible:nth-child(3) { transition-delay: 0.15s; }
+    .reveal-visible:nth-child(4) { transition-delay: 0.2s; }
+    .reveal-visible:nth-child(5) { transition-delay: 0.25s; }
+    .reveal-visible:nth-child(6) { transition-delay: 0.3s; }
+  `;
+  document.head.appendChild(style);
+
+}
